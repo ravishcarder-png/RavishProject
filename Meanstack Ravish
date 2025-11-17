@@ -1,0 +1,79 @@
+ MEAN Stack Deployment to Ubuntu in AWS
+
+
+#What is the MEAN Stack?
+  The MEAN Stack is a full-stack JavaScript solution used for building dynamic web applications.
+
+MEAN Stack Components
+ 1 ...MongoDB= NoSQL database (document-oriented)
+ 2 ...Express.js= Backend framework for Node.js
+ 3  ... Angular= Frontend framework for building UI
+ 4  ... Node.js= Server environment for executing JavaScript
+
+
+ #Deployment on an AWS Ubuntu EC2 instance involves#
+Provisioning the server
+Installing Node.js + npm
+Installing MongoDB
+Building & running Express backend
+Building & running Angular frontend
+Connecting Angular → Express → MongoDB
+Optional: Production level setup (PM2, Nginx)
+
+
+STEP 1 — Launch Ubuntu EC2 Instance
+  Basic knowledge of **Linux commands**, **Node.js**, and **MongoDB**
+
+ sudo apt update && sudo apt upgrade -y
+Install MongoDB
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl enable mongod
+sudo systemctl status mongod
+step2
+   Create a Folder named ‘Books’
+  mkdir Books && cd Books
+Run npm init -y
+
+STEP 3 — Install Node.js 
+ npm install express mongoose body-parser
+
+ start the server
+node server.js
+
+The server is now up and running, we can connect it via port 3300.
+the server runs on port 3300
+
+Now we can access our Book Register web application from the internet with a browser using Public IP address or Public DNS name
+
+ Project Structure
+
+
+Books/
+├── apps/
+│   ├── models/
+│   │   └── book.js
+│   └── routes.js
+├── public/
+│   ├── index.html
+│   └── scripts.js
+├── server.js
+└── package.json
+
+
+Add new books
+ View all books
+ Delete books by ISBN
+
+The content of the Web Book Register Application 
+Name
+ISBN
+Author
+Pages
+
+
+
+
+ 
+
+
