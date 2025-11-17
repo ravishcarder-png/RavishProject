@@ -1,0 +1,58 @@
+What Is MySQL Database Management Server?
+  MySQL is a Relational Database Management System (RDBMS). It stores data in tables, using rows and columns, just like Excel — but more powerful and secure.
+
+A MySQL Database Server is the computer (or EC2 instance) where MySQL is installed and running. This server stores, manages, processes, and secures the data for applications
+
+
+What MySQL Server Does
+*** Stores Data{ Everything goes into databases → inside tables}
+*** Ensures security{Only allowed users can access or change the data}
+***Manages relationships{Using primary keys, foreign keys, joins}
+*** Performs SQL queries{SQL = Structured Query Language}
+
+Key Concepts in MySQL Server
+Databases
+Tables
+Users
+Privileges
+SQL Queries
+
+You will create two EC2 instances (both Ubuntu)
+  MySQL Database Server
+  MySQL Client
+  
+  Log in to your AWS Management Console.
+Launch the First Instance (MySQL Server)
+
+Update & Upgrade Both Servers
+ sudo apt update -y
+sudo apt upgrade -y
+
+Install MySQL Server on the Server Machine
+  sudo apt install -y mysql-server
+
+
+     After installation, start and enable the service so it runs automatically
+sudo systemctl enable mysql
+sudo systemctl start mysql
+sudo systemctl status mysql
+
+Install MySQL Client on the Client Machine
+sudo apt install -y mysql-client
+
+Create a Database and a Remote User
+sudo mysql -u root -p
+
+Open Port 3306 on AWS Security Group
+  Type: MySQL/Aurora
+  Port Range: 3306
+
+  Connect from MySQL Client to Server
+  Enter the password:
+
+ Mysql Show databases.
+
+You have deloyed a fully functional MySQL Client-Server set up.
+
+
+  
